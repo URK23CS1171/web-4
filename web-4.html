@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page with Login</title>
+    
+    <style>
+        /* Basic Reset & Body Styling */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header & Navigation Bar */
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed; /* Adhering to "fixed" position guideline [1.1] */
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar .nav-links li {
+            margin-right: 20px;
+        }
+
+        .navbar .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .nav-links a:hover { /* Pseudo-class :hover [1.1, 1.6.1] */
+            color: #00bcd4; /* Example hover effect */
+        }
+
+        .navbar .login-button {
+            background-color: #00bcd4;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar .login-button:hover { /* Pseudo-class :hover [1.1, 1.6.1] */
+            background-color: #0097a7;
+        }
+
+        /* Landing Page Content & Hero Section */
+        .landing-content {
+            padding-top: 80px; /* To account for fixed navbar height */
+            text-align: center;
+        }
+
+        .hero-section {
+            background-image: url('https://via.placeholder.com/1200x400'); /* Placeholder image */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-section h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .hero-section p {
+            font-size: 1.2em;
+        }
+
+        /* Login Form Styling */
+        .login-form-container {
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 80px - 60px); /* Adjust for header and footer */
+        }
+
+        .login-form {
+            background-color: rgb(106, 187, 13);
+            padding: 30px;
+            border-radius: 15px; /* Rounded corners [1.1] */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box Shadow [1.1] */
+            width: 350px;
+            max-width: 90%;
+            position: relative; /* Positioned using relative [1.1] */
+        }
+
+        .login-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .login-form .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .login-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box; /* Ensures padding doesn't increase width */
+        }
+
+        .login-form input[type="text"]:focus,
+        .login-form input[type="password"]:focus { /* Pseudo-class :focus [1.1, 1.6.6] */
+            outline: none;
+            border-color: #00bcd4;
+            box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+        }
+
+        .login-form button[type="submit"] {
+            background-color: #00bcd4;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-form button[type="submit"]:hover { /* Pseudo-class :hover [1.1, 1.6.1] */
+            background-color: #0097a7;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo"></div>
+            <img src="https://mir-s3-cdn-cf.behance.net/projects/404/e8da1d167888899.Y3JvcCw4MTUsNjM4LDE2Nyww.png" height="80", width="90">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="login-nav">
+                <a href="#login" class="login-button">Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="landing-content">
+        <!-- Background Image can be added here using a DIV and CSS background-image property -->
+        <div class="hero-section">
+            <h1>Welcome to Our Awesome Application!</h1>
+            <p>Your journey to success starts here.</p>
+        </div>
+
+        <div id="login" class="login-form-container">
+            <form class="login-form">
+                <h2>Login</h2>
+                <div class="input-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit">Log In</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Your Company. All rights reserved.</p>
+    </footer>
+</body>
+</html>
